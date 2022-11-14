@@ -1,0 +1,6 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿Âä€úÿÿÿÿ
+O
+java:S3518"9Make sure "i" can't be zero before doing this modulation.(Š£†Î
+@
+java:S1481"*Remove this unused "count" local variable.(æÕ¿¼

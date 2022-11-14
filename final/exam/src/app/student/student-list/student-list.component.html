@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5">
+      <h1>Danh sách học viên</h1>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-3 mt-2">
+      <form class="d-flex" >
+        <input class="form-control me-2" name="keyword" type="search" placeholder="Class" aria-label="Search"
+               #classes>
+                <button class="btn btn-outline-success ">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-success table-striped table-bordered" id="tableCustomer">
+        <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên học viên</th>
+          <th>Ngày sinh</th>
+          <th>Email</th>
+          <th>CCCD</th>
+          <th>Tên lớp</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let student of students; index as i">
+          <td>{{i + 1}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.dateOfBirth}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.citizenIdentification}}</td>
+          <td>{{student.classes.name}}</td>
+          <td>
+            <button class="btn btn-primary me-3" data-bs-toggle="modal" (click)="detail(student)"
+                    data-bs-target="#exampleModal">Chi tiết
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal detail-->
+<div *ngIf="student1" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-success" id="exampleModalLabel">Thông tin chi tiết học viên</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Tên học viên: {{student1.name}}</h6>
+        <h6>Lớp: {{student1.classes.name}}</h6>
+        <h6>Số điện thoại: {{student1.phone}}</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

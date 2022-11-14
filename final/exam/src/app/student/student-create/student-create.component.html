@@ -1,0 +1,84 @@
+<div class="container">
+  <form [formGroup]="studentForm" (ngSubmit)="submit()">
+    <h1>Thêm mới học viên</h1>
+    <fieldset>
+      <legend style="margin-top: 15px; margin-bottom: 15px">Thông tin học viên</legend>
+      <table class="form-control-lg table">
+        <tr>
+          <td>
+            <span>Họ tên:</span>
+            <input class="form-control" formControlName="name" type="text" size="45px">
+            <p style="color: red"
+               *ngIf="studentForm.controls.name.hasError('required') && studentForm.controls.name.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+            <p style="color: red"
+               *ngIf="studentForm.controls.name.hasError('pattern') && studentForm.controls.name.touched">
+              Họ tên không đúng định dạng.Vui lòng nhập lại!!!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Ngày sinh:</span>
+            <input type="date" formControlName="dateOfBirth" size="45px" class="form-control">
+            <p style="color: red"
+               *ngIf="studentForm.controls.dateOfBirth.hasError('required') && studentForm.controls.dateOfBirth.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Email:</span>
+            <input type="text" formControlName="email" size="45px" class="form-control">
+            <p style="color: red"
+               *ngIf="studentForm.controls.email.hasError('required') && studentForm.controls.email.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+            <p style="color: red"
+               *ngIf="studentForm.controls.email.hasError('email') && studentForm.controls.email.touched">
+              Email không đúng định dạng.Vui lòng nhập lại!!!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Lớp học:</span>
+            <div class="form-control" size="45px">
+              <select formControlName="classes" style="width: 100%" class="form-select-lg text-center">
+                <option *ngFor="let classObj of classes"
+                        [ngValue]="classObj">{{classObj.name}}</option>
+              </select>
+            </div>
+            <p style="color: red"
+               *ngIf="studentForm.controls.classes.hasError('required') && studentForm.controls.classes.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>CCCD:</span>
+            <input formControlName="citizenIdentification" type="text" size="45px" class="form-control">
+            <p style="color: red"
+               *ngIf="studentForm.controls.citizenIdentification.hasError('required') && studentForm.controls.citizenIdentification.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Phone:</span>
+            <input formControlName="phone" type="text" size="45px" class="form-control">
+            <p style="color: red"
+               *ngIf="studentForm.controls.phone.hasError('required') && studentForm.controls.phone.touched">
+              Không được để trống.Vui lòng nhập vào!!!</p>
+            <p style="color: red"
+               *ngIf="studentForm.controls.phone.hasError('pattern') && studentForm.controls.phone.touched">
+              Số điện thoại không đúng định dạng.Vui lòng nhập lại!!!</p>
+          </td>
+        </tr>
+      </table>
+      <div class="d-flex justify-content-center">
+        <button class="form-control btn-success text-center " style="width: 300px" type="submit">Thêm mới học viên
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
