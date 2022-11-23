@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,9 +20,14 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "varchar(100)")
-    private String name;
+    private Integer quantity;
 
-    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL)
-    private Set<Book> books;
+
+    @ManyToOne
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
+    private Book book;
+
+    @ManyToOne
+    @JoinColumn(name = "invoice_id",referencedColumnName = "id")
+    private Invoice invoice;
 }

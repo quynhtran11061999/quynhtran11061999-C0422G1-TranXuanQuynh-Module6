@@ -27,4 +27,5 @@ public class AppRole {
     @JoinTable(name = "account_role", joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id"))
     private Set<Account> accounts;
+
 }

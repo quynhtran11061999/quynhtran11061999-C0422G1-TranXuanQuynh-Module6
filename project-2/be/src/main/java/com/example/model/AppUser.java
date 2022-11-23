@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -16,9 +13,6 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity
 public class AppUser {
-    public static final String ROLE_ADMIN = "ADM";
-    public static final String ROLE_USER = "USR";
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +23,7 @@ public class AppUser {
 
     private String email;
 
-    private String address;
-
-    private String avatar;
+    @OneToOne
+    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    private Address address;
 }

@@ -1,31 +1,50 @@
 package com.example.model;
 
+import java.util.List;
+
 public class LoginResponse {
-    private String token;
+    private String jwt;
 
-    private Long userId;
+    private List<String> roles;
 
-    public LoginResponse(String token, Long userId) {
-        this.token = token;
-        this.userId = userId;
+    private String username;
+
+    public LoginResponse(String jwt, List<String> roles, String username) {
+        this.jwt = jwt;
+        this.roles = roles;
+        this.username = username;
     }
 
-    public LoginResponse() {
+    public LoginResponse(String jwt, List<String> roles) {
+        this.jwt = jwt;
+        this.roles = roles;
     }
 
-    public String getToken() {
-        return token;
+    public LoginResponse(String jwt) {
+        this.jwt = jwt;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public String getJwt() {
+        return jwt;
     }
 
-    public Long getUserId() {
-        return userId;
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

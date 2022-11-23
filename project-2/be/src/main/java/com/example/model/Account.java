@@ -22,7 +22,7 @@ public class Account {
     @Column(columnDefinition = "varchar(30)")
     private String username;
 
-    @Column(columnDefinition = "varchar(500)")
+    @Column(columnDefinition = "varchar(200)")
     private String password;
 
     @OneToOne

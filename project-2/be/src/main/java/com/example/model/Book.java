@@ -1,11 +1,13 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -13,6 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,13 +23,13 @@ public class Book {
     @Column(columnDefinition = "varchar(200)")
     private String title;
 
-    private String publisher;
+    @ManyToOne
+    @JoinColumn(name = "publisher_id",referencedColumnName = "id")
+    private Publisher publisher;
 
     private Integer totalPages;
 
     private Double width;
-
-    private String author;
 
     private Double height;
 
@@ -39,6 +42,13 @@ public class Book {
     private Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category categories;
+    @JoinColumn(name = "author_id",referencedColumnName = "id")
+    private Author author;
+
+    @ManyToMany
+    @JsonBackReference(value = "category")
+    @JoinTable(name = "book_detail",joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
+
 }
