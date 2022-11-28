@@ -11,23 +11,16 @@ import java.util.Set;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Category {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer quantity;
+    @Column(columnDefinition = "varchar(100)")
+    private String name;
 
-
-    @ManyToOne
-    @JoinColumn(name = "book_id", referencedColumnName = "id")
-    private Book book;
-
-    @ManyToOne
-    @JoinColumn(name = "invoice_id",referencedColumnName = "id")
-    private Invoice invoice;
+    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Set<Book> books;
 }

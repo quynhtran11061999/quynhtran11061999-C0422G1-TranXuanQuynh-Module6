@@ -1,5 +1,6 @@
 package com.example.service.impl;
 
+import com.example.dto.IBookDto;
 import com.example.model.Book;
 import com.example.repository.IBookRepository;
 import com.example.service.IBookService;
@@ -8,20 +9,26 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import javax.transaction.Transactional;
 
 @Service
 public class BookService implements IBookService {
+
     @Autowired
     private IBookRepository iBookRepository;
 
     @Override
-    public Optional<Book> findBookById(Long id) {
-        return this.iBookRepository.findById(id);
+    public Page<IBookDto> findAllBookAndSearch(String title, String author, Pageable pageable) {
+        return this.iBookRepository.findAllBookAndSearch(
+                "%" + title + "%",
+                "%" + author + "%",
+                pageable
+        );
     }
 
     @Override
-    public Page<Book> findByTitle(String tittle, Pageable pageable) {
-        return iBookRepository.findByTitleContaining(tittle, pageable);
+    @Transactional
+    public Book findByIdBook(Long id) {
+        return this.iBookRepository.findByIdBook(id);
     }
 }

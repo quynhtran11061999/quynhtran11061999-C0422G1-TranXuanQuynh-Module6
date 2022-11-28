@@ -1,13 +1,12 @@
 package com.example.service.impl;
 
-import com.example.model.Account;
 import com.example.model.AppRole;
+import com.example.model.AppUser;
 import com.example.repository.IAppRoleRepository;
-import com.example.repository.IAppUserRepository;
+import com.example.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,27 +16,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserDetailServiceImpl implements UserDetailsService {
+public class CustomUserDetailService implements UserDetailsService {
     @Autowired
-    private IAppRoleRepository appRoleRepository;
+    private IUserService iUserService;
 
     @Autowired
-    private IAppUserRepository appUserRepository;
+    private IAppRoleRepository iAppRoleRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        Account user = this.appUserRepository.findByUsername(username);
-
-        if (user == null) {
-            throw new UsernameNotFoundException("Not found username in database");
-        }
-
-        List<AppRole> roleList = this.appRoleRepository.findByUsernameAsRole(username);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        AppUser account = iUserService.findByUsername(email);
+        List<AppRole> roleList = this.iAppRoleRepository.findByRoleName(account.getUsername());
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-        for (AppRole role : roleList) {
+        for (AppRole role: roleList){
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getRole()));
         }
-        return new User(user.getUsername(), user.getPassword(), grantedAuthorities);
+        return new org.springframework.security.core.userdetails.User(account.getUsername(),account.getPassword(),grantedAuthorities);
     }
 }

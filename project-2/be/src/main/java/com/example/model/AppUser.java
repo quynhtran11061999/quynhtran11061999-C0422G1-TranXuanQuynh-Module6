@@ -1,11 +1,13 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -13,17 +15,33 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 public class AppUser {
+    public static final String ROLE_ADMIN = "ADM";
+
+    public static final String ROLE_USER = "USR";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(columnDefinition = "varchar(30)")
+    private String username;
+
+    @Column(columnDefinition = "varchar(500)")
+    private String password;
 
     private String phone;
 
     private String email;
 
-    @OneToOne
-    @JoinColumn(name = "address_id",referencedColumnName = "id")
-    private Address address;
+    private String address;
+
+    private String avatar;
+
+    private double money ;
+
+    @ManyToMany
+    @JsonBackReference
+    @JoinTable(name = "account_role", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<AppRole> appRoles;
 }

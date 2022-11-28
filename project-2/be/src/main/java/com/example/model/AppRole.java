@@ -11,8 +11,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class AppRole {
     @Id
@@ -25,7 +23,6 @@ public class AppRole {
     @ManyToMany
     @JsonBackReference
     @JoinTable(name = "account_role", joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "account_id"))
-    private Set<Account> accounts;
-
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<AppUser> appUsers;
 }

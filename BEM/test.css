@@ -1,0 +1,48 @@
+.rectangle12 {
+    position: absolute;
+    width: 60%;
+    height: 867px;
+    left: 0px;
+    top: 0px;
+    background: #ffffff;
+}
+
+ul {
+    list-style: none;
+}
+
+/*navbar*/
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+
+}
+
+.nav-link li {
+    margin: 0 30px;
+}
+
+.rectangle2 {
+    position: absolute;
+    width: 40%;
+    height: 867px;
+    right: 0px;
+    top: 0px;
+    background: linear-gradient(158.45deg, #FDFF8F -8.31%, #81E9AD 37.36%, #61DBA0 77.46%, #53C38B 98.63%);
+}
+
+
+

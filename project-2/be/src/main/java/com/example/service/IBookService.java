@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface IBookService {
-    Optional<Book> findBookById(Long id);
+    Page<IBookDto> findAllBookAndSearch(String title, String author, Pageable pageable);
 
-    Page<Book> findByTitle(String tittle, Pageable pageable);
+    Book findByIdBook(Long id);
 }

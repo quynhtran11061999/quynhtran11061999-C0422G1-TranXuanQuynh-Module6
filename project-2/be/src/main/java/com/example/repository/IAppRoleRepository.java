@@ -8,15 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IAppRoleRepository extends JpaRepository<AppRole,Long> {
-    @Query(value = "SELECT " +
-            "    * " +
-            "FROM " +
-            "    app_role as a " +
-            "        JOIN " +
-            "    account_role as ar ON a.id = ar.role_id " +
-            "        JOIN " +
-            "    account as ac ON ar.account_id = ac.id " +
-            "WHERE " +
-            "    ac.username = :username", nativeQuery = true)
-    List<AppRole> findByUsernameAsRole(@Param("username") String username);
+    @Query(value = "select r.id, r.role from app_role as r join account_role as ar on r.id = ar.role_id join app_user as a on a.id = ar.user_id\n" +
+            "    where a.username = :username ",nativeQuery = true)
+    List<AppRole> findByRoleName(@Param("username") String username);
 }

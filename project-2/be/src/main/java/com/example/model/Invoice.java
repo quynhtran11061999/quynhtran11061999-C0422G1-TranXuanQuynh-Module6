@@ -10,8 +10,6 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Invoice {
     @Id
@@ -24,6 +22,6 @@ public class Invoice {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "account_id",referencedColumnName = "id")
-    private Account account;
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private AppUser appUser;
 }

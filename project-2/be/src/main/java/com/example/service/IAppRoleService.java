@@ -5,5 +5,5 @@ import com.example.model.AppRole;
 import java.util.List;
 
 public interface IAppRoleService {
-    List<AppRole> findByUsername(String username);
+    List<AppRole> findByRoleName(String username);
 }

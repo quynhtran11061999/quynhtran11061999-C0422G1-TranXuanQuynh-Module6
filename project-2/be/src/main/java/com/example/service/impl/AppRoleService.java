@@ -11,10 +11,10 @@ import java.util.List;
 @Service
 public class AppRoleService implements IAppRoleService {
     @Autowired
-    private IAppRoleRepository appRoleRepository;
+    private IAppRoleRepository iAppRoleRepository;
 
     @Override
-    public List<AppRole> findByUsername(String username) {
-        return this.appRoleRepository.findByUsernameAsRole(username);
+    public List<AppRole> findByRoleName(String username) {
+        return this.iAppRoleRepository.findByRoleName(username);
     }
 }

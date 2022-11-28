@@ -11,11 +11,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Book {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,15 +20,17 @@ public class Book {
     @Column(columnDefinition = "varchar(200)")
     private String title;
 
-    @ManyToOne
-    @JoinColumn(name = "publisher_id",referencedColumnName = "id")
-    private Publisher publisher;
+    private String publisher;
 
     private Integer totalPages;
 
     private Double width;
 
+    private String author;
+
     private Double height;
+
+    private Double price;
 
     @Column(columnDefinition = "text")
     private String imageUrl;
@@ -42,13 +41,7 @@ public class Book {
     private Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "author_id",referencedColumnName = "id")
-    private Author author;
-
-    @ManyToMany
-    @JsonBackReference(value = "category")
-    @JoinTable(name = "book_detail",joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    @JoinColumn(name = "category_id")
+    private Category categories;
 
 }
