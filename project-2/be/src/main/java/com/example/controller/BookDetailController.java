@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api")
+@RequestMapping("/api/public")
 public class BookDetailController {
     @Autowired
     private IBookService iBookService;
 
-    @GetMapping("/user/book/{id}")
+    @GetMapping("/book/{id}")
     public ResponseEntity<Book> bookDetail(@PathVariable Long id) {
 
         Book book = this.iBookService.findByIdBook(id);
 
-        if (book.equals("")) {
+        if (book == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(book, HttpStatus.OK);

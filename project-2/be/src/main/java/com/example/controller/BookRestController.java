@@ -32,7 +32,6 @@ public class BookRestController {
         if (!bookList.hasContent()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
         return new ResponseEntity<>(bookList, HttpStatus.OK);
     }
 }

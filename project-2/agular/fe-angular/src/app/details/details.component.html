@@ -1,39 +1,41 @@
-<div class="site-blocks-cover inner-page overlay" style="background-image: url(../../assets/images/hero_2.jpg);" data-aos="fade"
-     data-stellar-background-ratio="0.5">
-  <div class="row align-items-center justify-content-center">
-    <div class="col-md-5 text-center" data-aos="fade">
+<div class="site-wrap">
+  <div class="site-blocks-cover inner-page overlay" style="background-image: url(../../assets/images/hero_2.jpg);"
+       data-aos="fade"
+       data-stellar-background-ratio="0.5">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-5 text-center" data-aos="fade">
+      </div>
     </div>
   </div>
-</div>
-<div class="slant-1"></div>
-
-<div class="site-section first-section">
-  <div class="container">
-    <div class="row mb-5" *ngIf="book">
-      <div class="col-md-12 text-center" data-aos="fade">
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">Chi tiết sách</h2>
-      </div>
-      <div class="site-section section-counter">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <p class="mb-5"><img
-                src="{{book.imageUrl}}"
-                alt="Image" class="img-fluid"></p>
-            </div>
-            <div class="col-lg-5 ml-auto">
-              <h2 class="site-section-heading mb-3 font-secondary text-uppercase">{{book.title}}</h2>
-              <ul class="list-unstyled">
-                <li><span style="color: red">*</span> Tác giả: <span style="color: black">{{book.author}}</span></li>
-                <li><span style="color: red">*</span> Nhà xuất bản: <span style="color: black">{{book.publisher}}</span></li>
-                <li><span style="color: red">*</span> Số trang: <span style="color: black">{{book.totalPages}}</span></li>
-              </ul>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="counter">
-                    <span class="caption">Giá bán</span>
-                    <a href="#" class="btn btn-success text-white px-4"><span class="number"
-                                                                              style="color: white">{{book.price}}</span></a>
+  <div class="slant-1"></div>
+  <div class="site-section first-section">
+    <div class="container">
+      <div class="row mb-5" *ngIf="book">
+        <div class="col-md-12 text-center" data-aos="fade">
+          <h2 class="site-section-heading text-uppercase text-center font-secondary">Chi tiết sách</h2>
+        </div>
+        <div class="site-section section-counter">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="mb-5"><img
+                  src="{{book.imageUrl}}"
+                  alt="Image" class="img-fluid"></p>
+              </div>
+              <div class="col-lg-5 ml-auto">
+                <h2 class="site-section-heading mb-3 font-secondary text-uppercase">{{book.title}}</h2>
+                <ul class="list-unstyled">
+                  <li><h4>Tác giả: <span style="color: black">{{book.author}}</span></h4></li>
+                  <li><h4>Nhà xuất bản: <span style="color: black">{{book.publisher}}</span></h4></li>
+                  <li><h4>Số trang: <span style="color: black">{{book.totalPages}}</span></h4></li>
+                </ul>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="counter">
+                      <span class="caption">Giá bán</span>
+                      <span class="btn btn-success text-white px-4"><span class="number"
+                          style="color: white">{{book.price | currency:'':'':'4.0-2'}}đ</span></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -43,23 +45,23 @@
       </div>
     </div>
   </div>
-</div>
-<div class="pb-3 site-section first-section">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-12" data-aos="fade">
-        <h2 class="site-section-heading text-center text-uppercase">Giới thiêu sách</h2>
+  <div *ngIf="book" class="pb-3 site-section first-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12" data-aos="fade">
+          <h2 class="site-section-heading text-center text-uppercase">Giới thiêu sách</h2>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-lg-12 text-black mb-4" data-aos="fade-up" data-aos-delay="100">
-        <p>{{book.summary}}</p>
+      <div class="row">
+        <div class="col-md-12 col-lg-12 text-black mb-4" data-aos="fade-up" data-aos-delay="100">
+          <p>{{book.summary}}</p>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <a routerLink="/list" class="btn btn-success text-white px-4"><span class="text"
-                                                                            style="color: white">Quay lại</span></a>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <a routerLink="/list" class="btn btn-success text-white px-4"><span class="text"
+                                                                              style="color: white">Quay lại</span></a>
+        </div>
       </div>
     </div>
   </div>

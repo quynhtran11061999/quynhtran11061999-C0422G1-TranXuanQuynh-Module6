@@ -25,6 +25,6 @@ export class ShopService {
   }
 
   getDetailBook(id: number): Observable<any> {
-    return this.httpClient.get('http://localhost:8080/api/user/book/' + id, this.httpOption);
+    return this.httpClient.get('http://localhost:8080/api/public/book/' + id);
   }
 }

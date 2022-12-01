@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin() {
-
     this.loginService.getLogin(this.account).subscribe(n => {
       if (n.token != undefined) {
         this.tokenStorageService.setToken(n.token);
@@ -38,7 +37,6 @@ export class LoginComponent implements OnInit {
         this.tokenStorageService.setAvatar(n.avatar);
           this.toastr.success('Đăng nhập thành công!', 'Thông báo!');
           this.shareData.changeLoginStatus(true);
-
       }
     }, error => {
       this.toastr.error('Sai tài khoản hoặc mật khẩu!', 'Đăng nhập thất bại!');

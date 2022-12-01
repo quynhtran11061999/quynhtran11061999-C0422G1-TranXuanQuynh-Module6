@@ -54,7 +54,7 @@
           <img src="{{book.imageUrl}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{book.title}}</h5>
-            <p class="card-text">Giá bán: {{book.price}}</p>
+            <p class="card-text">Giá bán: {{book.price| currency:'':'':'4.0-2'}}đ</p>
             <p><a href="#" class="btn btn-success text-white px-4 w-100" [routerLink]="['/details/',book.id]">Chi tiết sách</a></p>
             <p><a href="#" class="btn btn-success text-white px-4 w-100">Thêm vào giỏ hàng</a></p>
           </div>

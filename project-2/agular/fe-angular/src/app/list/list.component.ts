@@ -9,8 +9,6 @@ import {TokenService} from "../service/token.service";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-
   books: IBookDto[];
   title: string = '';
   author: string = '';
@@ -18,7 +16,6 @@ export class ListComponent implements OnInit {
   page: number = 0;
 
   constructor(private shopService: ShopService, private tokenService:TokenService) {
-
   }
 
   ngOnInit(): void {

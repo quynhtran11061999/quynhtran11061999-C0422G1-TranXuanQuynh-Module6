@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="site-wrap">
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div> <!-- .site-mobile-menu -->
+
+  <div class="site-navbar-wrap js-site-navbar bg-white">
+    <div class="container">
+      <div class="site-navbar bg-light">
+        <div class="row align-items-center">
+          <div class="col-2">
+            <h2 class="mb-0 site-logo"><a href="home.html" class="font-weight-bold text-uppercase">BOOKS</a>
+            </h2>
+          </div>
+          <div class="col-10">
+            <nav class="site-navigation text-right" role="navigation">
+              <div class="container">
+                <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
+                                                                              class="site-menu-toggle js-menu-toggle text-black"><span
+                        class="icon-menu h3"></span></a></div>
+
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                  <!--                                    <li class="active"><a href="home.html">Trang chủ</a></li>-->
+                  <li><a href="details.html">Danh mục sách</a></li>
+                  <li><a href="blog.html">Sách bán chạy</a></li>
+                  <li><a href="contact.html">Chương trình khuyến mãi</a></li>
+                  <li><a href="contact.html">Giảm giá đặc biệt</a></li>
+                  <li><a href="contact.html"><span
+                          class="d-inline-block bg-primary text-white btn btn-primary">Login</span></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade"
+       data-stellar-background-ratio="0.5">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-5 text-center" data-aos="fade">
+      </div>
+    </div>
+  </div>
+  <div class="slant-1"></div>
+
+  <section class="h-100 h-custom">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col" class="h5">Shopping Bag</th>
+                <th scope="col">Format</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="d-flex align-items-center">
+                    <img src="https://i.imgur.com/2DsA49b.webp" class="img-fluid rounded-3"
+                         style="width: 120px;" alt="Book">
+                    <div class="flex-column ms-4">
+                      <p class="mb-2">Thinking, Fast and Slow</p>
+                      <p class="mb-0">Daniel Kahneman</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="mb-0" style="font-weight: 500;">Digital</p>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                    <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+
+                    <input min="0" name="quantity" value="2" type="number"
+                           class="form-control form-control-sm" style="width: 50px;" />
+
+                    <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </td>
+                <td class="align-middle">
+                  <p class="mb-0" style="font-weight: 500;">$9.99</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="border-bottom-0">
+                  <div class="d-flex align-items-center">
+                    <img src="https://i.imgur.com/Oj1iQUX.webp" class="img-fluid rounded-3"
+                         style="width: 120px;" alt="Book">
+                    <div class="flex-column ms-4">
+                      <p class="mb-2">Homo Deus: A Brief History of Tomorrow</p>
+                      <p class="mb-0">Yuval Noah Harari</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle border-bottom-0">
+                  <p class="mb-0" style="font-weight: 500;">Paperback</p>
+                </td>
+                <td class="align-middle border-bottom-0">
+                  <div class="d-flex flex-row">
+                    <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+
+                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                           class="form-control form-control-sm" style="width: 50px;" />
+
+                    <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </td>
+                <td class="align-middle border-bottom-0">
+                  <p class="mb-0" style="font-weight: 500;">$13.50</p>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
+            <div class="card-body p-4">
+
+              <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
+                  <form>
+                    <div class="d-flex flex-row pb-3">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
+                               value="" aria-label="..." checked />
+                      </div>
+                      <div class="rounded border w-100 p-3">
+                        <p class="d-flex align-items-center mb-0">
+                          <i class="fab fa-cc-mastercard fa-2x text-dark pe-2"></i>Credit
+                          Card
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row pb-3">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
+                               value="" aria-label="..." />
+                      </div>
+                      <div class="rounded border w-100 p-3">
+                        <p class="d-flex align-items-center mb-0">
+                          <i class="fab fa-cc-visa fa-2x fa-lg text-dark pe-2"></i>Debit Card
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
+                               value="" aria-label="..." />
+                      </div>
+                      <div class="rounded border w-100 p-3">
+                        <p class="d-flex align-items-center mb-0">
+                          <i class="fab fa-cc-paypal fa-2x fa-lg text-dark pe-2"></i>PayPal
+                        </p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-6">
+                  <div class="row">
+                    <div class="col-12 col-xl-6">
+                      <div class="form-outline mb-4 mb-xl-5">
+                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                               placeholder="John Smith" />
+                        <label class="form-label" for="typeName">Name on card</label>
+                      </div>
+
+                      <div class="form-outline mb-4 mb-xl-5">
+                        <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
+                               size="7" id="exp" minlength="7" maxlength="7" />
+                        <label class="form-label" for="typeExp">Expiration</label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-xl-6">
+                      <div class="form-outline mb-4 mb-xl-5">
+                        <input type="text" class="form-control form-control-lg" siez="17"
+                               placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
+                        <label class="form-label" for="typeText">Card Number</label>
+                      </div>
+
+                      <div class="form-outline mb-4 mb-xl-5">
+                        <input type="password" id="typeText" class="form-control form-control-lg"
+                               placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                        <label class="form-label" for="typeText">Cvv</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-xl-3">
+                  <div class="d-flex justify-content-between" style="font-weight: 500;">
+                    <p class="mb-2">Subtotal</p>
+                    <p class="mb-2">$23.49</p>
+                  </div>
+
+                  <div class="d-flex justify-content-between" style="font-weight: 500;">
+                    <p class="mb-0">Shipping</p>
+                    <p class="mb-0">$2.99</p>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
+                    <p class="mb-2">Total (tax included)</p>
+                    <p class="mb-2">$26.48</p>
+                  </div>
+
+                  <button type="button" class="btn btn-primary btn-block btn-lg">
+                    <div class="d-flex justify-content-between">
+                      <span>Checkout</span>
+                      <span>$26.48</span>
+                    </div>
+                  </button>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h3 class="footer-heading mb-4 text-white">About</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat
+            amet.</p>
+          <p><a href="#" class="btn btn-primary text-white px-4">Read More</a></p>
+        </div>
+        <div class="col-md-5 mb-4 mb-md-0 ml-auto">
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3 class="footer-heading mb-4 text-white">Free Templates</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">HTML5 / CSS3</a></li>
+                <li><a href="#">Clean Design</a></li>
+                <li><a href="#">Responsive</a></li>
+                <li><a href="#">Multi Purpose Template</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <h3 class="footer-heading mb-4 text-white">Stay up to date</h3>
+              <form action="#" class="d-flex footer-subscribe">
+                <input type="text" class="form-control rounded-0" placeholder="Enter your email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="row">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+            <div class="col-md-12">
+              <p>
+                <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | This template is made with <i class="icon-heart text-danger"
+                                                                aria-hidden="true"></i> by <a
+                  href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
